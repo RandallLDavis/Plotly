@@ -1,15 +1,18 @@
 function metaData(sample) {
-    d3.json(`samples.json/metadata/${sample}`).then((data) => {
+  d3.json('samples.json').then((data) => {
         console.log(data);
-    });
+    
     var MetaDataSample = d3.select("#sample-metadata");
       
-      Object.entries(metadata).forEach(([key, value]);
-  }
+      Object.entries(metadata).forEach(([key, value]) => {
+
+      });
+    });
+  };
 
 function chartBuilder(sample) {
 
-  d3.json(`samples.json/samples/${sample}`).then((data) => {
+  d3.json('samples.json').then((data) => {
         console.log(data);
     });
     var ids = data.otu_ids;
@@ -62,7 +65,7 @@ function init() {
   
   var selector = d3.select("#selDataset");
 
-  d3.json(`samples.json/names/${names}`).then((sampleNames) => {
+  d3.json('samples.json').then((sampleNames) => {
     sampleNames.forEach((sample) => {
       selector
         .append("option")
